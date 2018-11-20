@@ -1,0 +1,16 @@
+dist: trusty
+
+group: edge
+
+language: java
+
+sudo: required
+
+jdk: openjdk8
+
+cache:
+  directories:
+    - $HOME/.m2
+install:
+  - export MAVEN_HOME=`mvn --version | grep 'Maven home' | sed -e 's/Maven h.* //'`
+  - mvn install
